@@ -4,18 +4,11 @@ terraform {
       source = "telmate/proxmox"
       version = "2.7.1"
     }
-  }
+  }  
 }
 
 provider "proxmox" {
   # Configuration options
-}
+  pm_api_url = "https://proxmox.greatcatlab.net:8006/api2/json"
 
-#define location of state file
-terraform {
-  backend "s3" {
-    bucket = "myterraformcode"
-    key    = "aws-dev-infrastructure/terraform.tfstate"
-    region = "us-east-1"
-  }
 }
